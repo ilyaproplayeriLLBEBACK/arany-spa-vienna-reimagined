@@ -1,16 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { Philosophy } from "@/components/site/Philosophy";
+import { Treatments } from "@/components/site/Treatments";
+import { Reviews } from "@/components/site/Reviews";
+import { Visit } from "@/components/site/Visit";
+import { CTA } from "@/components/site/CTA";
+import { Footer } from "@/components/site/Footer";
+import { useEffect } from "react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.title = "Arany Spa Vienna — Luxury Day Spa at Park Hyatt";
+    const meta = document.querySelector('meta[name="description"]') || (() => {
+      const m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); return m;
+    })();
+    meta.setAttribute('content', "Arany Spa at Park Hyatt Vienna — gilded sanctuary in the old bank vault. Massages, aromatherapy, hot stones & rituals. Reserve online.");
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main>
+      <Nav />
+      <Hero />
+      <Philosophy />
+      <Treatments />
+      <Reviews />
+      <Visit />
+      <CTA />
+      <Footer />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
